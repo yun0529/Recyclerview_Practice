@@ -5,15 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.recyclerviewpractice.R
 import com.example.recyclerviewpractice.databinding.ItemCustomRvChapterBinding
 
 private lateinit var binding : ItemCustomRvChapterBinding
 
-class RvAdapter(private val chapterSet: ArrayList<Chapter>, var con : Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    private val TYPE_HEADER = 0
-    private val TYPE_ITEM = 1
-    private val TYPE_FOOTER = 2
+class RvChapterAdapter(private val chapterSet: ArrayList<Chapter>, var con : Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         binding = ItemCustomRvChapterBinding.inflate(LayoutInflater.from(parent.context),parent, false)
@@ -21,6 +18,7 @@ class RvAdapter(private val chapterSet: ArrayList<Chapter>, var con : Context) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val (id, chapterName, imageUrl) = chapterSet[position]
         when(holder){
             is ViewHolder -> holder.bind(chapterSet[position])
         }
@@ -38,7 +36,7 @@ class RvAdapter(private val chapterSet: ArrayList<Chapter>, var con : Context) :
 
     inner class ViewHolder(private val binding : ItemCustomRvChapterBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(data : Chapter){
-            Glide.with(con).load(data.imageUrl).into(binding.citemIv)
+            binding.citemIv.setImageResource(R.drawable.ic_launcher_background)
             binding.citemTv.text = data.chapterName
         }
 
