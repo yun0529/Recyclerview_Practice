@@ -50,10 +50,17 @@ class CustomRvActivity : BaseActivity<ActivityCustomRvBinding>(ActivityCustomRvB
         maths.chapters.add(Chapter(16,"Linear equations","http://ashishkudale.com/images/maths/linear.png"))
         maths.chapters.add(Chapter(17,"Graph","http://ashishkudale.com/images/maths/plot.png"))
         maths.chapters.add(Chapter(18,"Trigonometry","http://ashishkudale.com/images/maths/trigonometry.png"))
+        val onemore = Subject(5,"onemore",ArrayList())
+        onemore.chapters.add(Chapter(19,"Circle","http://ashishkudale.com/images/maths/circle.png"))
+        onemore.chapters.add(Chapter(20,"Geometry","http://ashishkudale.com/images/maths/geometry.png"))
+        onemore.chapters.add(Chapter(21,"Linear equations","http://ashishkudale.com/images/maths/linear.png"))
+        onemore.chapters.add(Chapter(22,"Graph","http://ashishkudale.com/images/maths/plot.png"))
+        onemore.chapters.add(Chapter(23,"Trigonometry","http://ashishkudale.com/images/maths/trigonometry.png"))
         subjects.add(physics)
         subjects.add(chem)
         subjects.add(maths)
         subjects.add(bio)
+        subjects.add(onemore)
         return subjects
     }
 }
